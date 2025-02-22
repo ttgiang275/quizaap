@@ -1,7 +1,6 @@
 package com.river.quizapp.dto;
 
 import com.river.quizapp.model.Difficulty;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,8 +8,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class QuestionCreateDto {
-    @NotNull(message = "Question must be not null")
+public class QuestionResponseDto {
+    private Integer id;
     private String question;
     private String category;
     private Difficulty difficulty;

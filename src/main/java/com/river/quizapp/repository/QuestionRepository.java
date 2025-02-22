@@ -23,4 +23,7 @@ public interface QuestionRepository extends JpaRepository<Question, Integer> {
             @Param("question") String question
     );
 
+    @Query(value = "SELECT TOP (:numberOfQuestions) * FROM questions WHERE category = :category ORDER BY NEWID()", nativeQuery = true)
+    List<Question> findRandomQuestionsByCategory(@Param("category") String category, @Param("numberOfQuestions") int numberOfQuestions);
+
 }
